@@ -780,7 +780,2875 @@
       header nav{grid-template-columns:repeat(2,minmax(0,1fr));}
       .portfolio-filters-text{grid-template-columns:1fr 1fr;}
     }
-  </style>
+
+
+    .mobile-brand-row{display:flex; align-items:center; gap:12px;}
+    .brand-text{display:flex; flex-direction:column; gap:3px;}
+    .tagline{display:none; font-size:11px; font-weight:700; letter-spacing:.22em; color:rgba(52,44,38,.68);}
+    .mobile-menu-toggle{display:none;}
+    .mobile-quick{display:none;}
+
+    @media (max-width:980px){
+      header{
+        position:sticky;
+        top:0;
+        left:auto;
+        right:auto;
+        z-index:70;
+        padding:12px 10px 4px;
+        pointer-events:auto;
+      }
+
+      .mobile-fab{display:none !important;}
+
+      #topbar{
+        opacity:1 !important;
+        visibility:visible !important;
+        transform:none !important;
+        pointer-events:auto !important;
+        width:100% !important;
+        margin:0 auto;
+      }
+
+      .wrap{padding:0 8px 44px;}
+
+      .topbar{
+        display:flex;
+        flex-direction:column;
+        gap:12px;
+        padding:14px 16px 16px;
+        border-radius:22px;
+      }
+
+      .mobile-brand-row{
+        width:100%;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:10px;
+      }
+
+      .brand-mini{
+        justify-content:flex-start;
+        min-width:0;
+        width:auto;
+        gap:10px;
+      }
+
+      .logo-pill{width:42px; height:42px;}
+      .logo-pill img{width:24px; height:24px;}
+
+      .name{font-size:18px; letter-spacing:.18em; text-align:left; line-height:1;}
+      .tagline{display:block;}
+
+      .mobile-menu-toggle{
+        display:grid;
+        place-items:center;
+        width:42px;
+        height:42px;
+        flex:0 0 auto;
+        border-radius:999px;
+        border:1px solid rgba(127,100,72,.16);
+        background:rgba(255,255,255,.22);
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.24);
+        font-size:22px;
+        color:rgba(52,44,38,.82);
+        cursor:pointer;
+      }
+
+      .mobile-quick{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+        width:100%;
+      }
+
+      .mobile-quick .btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:38px;
+        padding:10px 12px;
+        font-size:11px;
+        letter-spacing:.12em;
+      }
+
+      header nav{
+        display:none;
+        width:100%;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:8px;
+        padding-top:2px;
+      }
+
+      header.menu-open nav{display:grid;}
+
+      header nav a{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:36px;
+        padding:8px 6px;
+        border-radius:999px;
+        background:rgba(255,255,255,.12);
+        border:1px solid rgba(0,0,0,.06);
+        font-size:10px;
+        letter-spacing:.07em;
+        white-space:normal;
+        line-height:1.05;
+        text-align:center;
+      }
+
+      .links{display:none;}
+
+      .hero{padding:0;}
+      .hero .hero-logo{display:none;}
+    }
+
+    @media (max-width:560px){
+      .name{font-size:16px; letter-spacing:.14em;}
+      .tagline{font-size:10px; letter-spacing:.18em;}
+      .topbar{padding:13px 14px 15px;}
+    }
+
+
+    /* Mobile v3 fixes: keep desktop intact, only sane phone behavior. */
+    @media (max-width:980px){
+      .hero{
+        padding:4px 0 2px !important;
+      }
+
+      .hero .hero-logo{
+        display:block !important;
+        width:min(310px, 76vw) !important;
+        height:auto !important;
+        margin:6px auto 12px !important;
+        opacity:.82 !important;
+      }
+
+      #portfolio{
+        display:flex !important;
+        flex-direction:column !important;
+        gap:14px !important;
+      }
+
+      #portfolio .top-previews{
+        order:1 !important;
+      }
+
+      #portfolio .portfolio-head{
+        order:2 !important;
+        margin:0 !important;
+      }
+
+      #portfolioFilters{
+        display:grid !important;
+        grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+        gap:8px !important;
+        width:100% !important;
+      }
+
+      #portfolioFilters .sep{
+        display:none !important;
+      }
+
+      #portfolioFilters .pf[data-cat="brows"],
+      #portfolioFilters .pf[data-cat="lips"],
+      #portfolioFilters .pf[data-cat="eyes"]{
+        display:none !important;
+      }
+
+      #portfolioFilters .pf{
+        min-height:38px !important;
+        padding:8px 6px !important;
+        border-radius:14px !important;
+        font-size:8.5px !important;
+        letter-spacing:.035em !important;
+        line-height:1.08 !important;
+      }
+
+      #portfolioFilters .pf[data-cat="all"]{
+        order:99 !important;
+        grid-column:2 / 3 !important;
+      }
+    }
+
+    @media (max-width:560px){
+      .hero .hero-logo{
+        width:min(285px, 74vw) !important;
+        margin:2px auto 10px !important;
+      }
+    }
+
+
+    /* Premium polish v4: stronger glass, cleaner mobile header, bottom CTA. */
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.24), rgba(255,255,255,.13));
+      border:1px solid rgba(255,255,255,.28);
+      box-shadow:
+        0 18px 50px rgba(0,0,0,.13),
+        inset 0 1px 0 rgba(255,255,255,.48);
+      backdrop-filter:blur(30px);
+      -webkit-backdrop-filter:blur(30px);
+    }
+
+    .preview-card{
+      background:rgba(239,229,217,.72);
+      border:1px solid rgba(255,255,255,.34);
+      box-shadow:
+        0 14px 34px rgba(0,0,0,.13),
+        inset 0 1px 0 rgba(255,255,255,.42);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    .preview-card .label{
+      background:rgba(231,218,204,.86);
+      border-top:none;
+      color:rgba(42,34,28,.92);
+    }
+
+    .preview-card .label::before{
+      content:none !important;
+      display:none !important;
+    }
+
+    .ghost, .btn, .pf, .mobile-menu-toggle{
+      background:rgba(242,233,222,.58);
+      border:1px solid rgba(255,255,255,.38);
+      box-shadow:
+        0 8px 20px rgba(0,0,0,.08),
+        inset 0 1px 0 rgba(255,255,255,.48);
+    }
+
+    .btn:hover, .ghost:hover, .pf:hover, .pf.active{
+      background:rgba(248,241,232,.76);
+    }
+
+    .mobile-bottom-cta{
+      display:none;
+    }
+
+    @media (max-width:980px){
+      body{
+        padding-bottom:78px;
+      }
+
+      header{
+        padding:10px 10px 2px !important;
+      }
+
+      .topbar{
+        padding:14px 14px 14px !important;
+        gap:0 !important;
+      }
+
+      .mobile-brand-row{
+        display:grid !important;
+        grid-template-columns:42px 1fr 42px !important;
+        align-items:center !important;
+        width:100% !important;
+        gap:0 !important;
+      }
+
+      .mobile-brand-row::before{
+        content:"";
+        width:42px;
+        height:42px;
+        display:block;
+      }
+
+      .brand-mini{
+        grid-column:2 !important;
+        justify-content:center !important;
+        width:100% !important;
+        gap:0 !important;
+      }
+
+      .brand-mini .logo-pill{
+        display:none !important;
+      }
+
+      .brand-text{
+        align-items:center !important;
+        text-align:center !important;
+      }
+
+      .name{
+        text-align:center !important;
+        font-size:18px !important;
+        letter-spacing:.20em !important;
+        line-height:1 !important;
+      }
+
+      .tagline{
+        text-align:center !important;
+        font-size:10px !important;
+        letter-spacing:.20em !important;
+      }
+
+      .mobile-menu-toggle{
+        grid-column:3 !important;
+        grid-row:1 !important;
+        justify-self:end !important;
+        background:rgba(238,226,211,.72) !important;
+      }
+
+      .mobile-quick{
+        display:none !important;
+      }
+
+      header.menu-open nav{
+        display:grid !important;
+        margin-top:12px !important;
+      }
+
+      .hero .hero-logo{
+        width:min(390px, 88vw) !important;
+        margin:10px auto 16px !important;
+        opacity:.90 !important;
+      }
+
+      .section, #portfolio, #video, #services, #articles, #about, #contacts{
+        border-radius:24px !important;
+      }
+
+      #portfolio{
+        margin-top:16px !important;
+        padding:16px !important;
+      }
+
+      #portfolioGrid .preview-card{
+        border-radius:18px !important;
+        min-height:150px !important;
+      }
+
+      #portfolioGrid .preview-card .label{
+        padding:10px 6px 11px !important;
+        font-size:16px !important;
+        letter-spacing:.035em !important;
+        background:rgba(231,218,204,.92) !important;
+      }
+
+      #portfolioFilters .pf{
+        background:rgba(236,224,210,.72) !important;
+        border:1px solid rgba(255,255,255,.34) !important;
+        color:rgba(47,39,33,.80) !important;
+        box-shadow:
+          0 6px 14px rgba(0,0,0,.07),
+          inset 0 1px 0 rgba(255,255,255,.38) !important;
+      }
+
+      #portfolioFilters .pf.active{
+        background:rgba(248,241,232,.84) !important;
+        color:rgba(36,31,27,.95) !important;
+      }
+
+      .mobile-bottom-cta{
+        position:fixed;
+        left:14px;
+        right:14px;
+        bottom:14px;
+        z-index:95;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        min-height:52px;
+        border-radius:999px;
+        background:linear-gradient(180deg, rgba(255,248,238,.94), rgba(224,205,184,.92));
+        border:1px solid rgba(255,255,255,.58);
+        box-shadow:
+          0 18px 42px rgba(0,0,0,.22),
+          inset 0 1px 0 rgba(255,255,255,.70);
+        backdrop-filter:blur(22px);
+        -webkit-backdrop-filter:blur(22px);
+        font-family:var(--font-ui);
+        font-size:12px;
+        font-weight:800;
+        letter-spacing:.18em;
+        text-transform:uppercase;
+        color:rgba(39,32,27,.92);
+      }
+    }
+
+    @media (max-width:560px){
+      .name{
+        font-size:16px !important;
+        letter-spacing:.16em !important;
+      }
+
+      .tagline{
+        font-size:9px !important;
+        letter-spacing:.18em !important;
+      }
+
+      .hero .hero-logo{
+        width:min(360px, 86vw) !important;
+        margin:8px auto 14px !important;
+      }
+    }
+
+
+    /* Premium v5 correction: calmer controls, unified filters/cards, proper section rhythm. */
+    #portfolio{
+      margin-bottom:var(--gap) !important;
+    }
+
+    .two-col{
+      margin-top:0 !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle{
+      background:rgba(229,216,201,.42) !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.28) !important;
+      color:rgba(49,41,35,.78) !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active{
+      background:rgba(229,216,201,.42) !important;
+      border-color:rgba(255,255,255,.24) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.28) !important;
+      color:rgba(49,41,35,.78) !important;
+    }
+
+    .pf.active{
+      font-weight:600 !important;
+    }
+
+    .preview-card{
+      background:rgba(226,211,195,.58) !important;
+      border:1px solid rgba(255,255,255,.26) !important;
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.10),
+        inset 0 1px 0 rgba(255,255,255,.32) !important;
+    }
+
+    .preview-card .label{
+      background:rgba(226,211,195,.58) !important;
+      border-top:1px solid rgba(255,255,255,.16) !important;
+      color:rgba(42,34,28,.86) !important;
+    }
+
+    #articles .preview-card .label{
+      background:rgba(226,211,195,.58) !important;
+      border-top:1px solid rgba(255,255,255,.16) !important;
+    }
+
+    .price-table-wrap{
+      background:rgba(226,211,195,.38) !important;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    @media (max-width:980px){
+      #portfolio{
+        margin-bottom:var(--gap) !important;
+      }
+
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:rgba(226,211,195,.52) !important;
+        border:1px solid rgba(255,255,255,.22) !important;
+        color:rgba(47,39,33,.80) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.24) !important;
+      }
+
+      #portfolioGrid .preview-card .label{
+        background:rgba(226,211,195,.58) !important;
+        border-top:1px solid rgba(255,255,255,.16) !important;
+      }
+
+      .mobile-menu-toggle{
+        background:rgba(226,211,195,.50) !important;
+      }
+
+      .mobile-bottom-cta{
+        background:rgba(226,211,195,.72) !important;
+        border:1px solid rgba(255,255,255,.32) !important;
+        box-shadow:
+          0 12px 28px rgba(0,0,0,.16),
+          inset 0 1px 0 rgba(255,255,255,.34) !important;
+        color:rgba(43,35,30,.88) !important;
+        letter-spacing:.16em !important;
+      }
+    }
+
+
+
+    /* Premium polish v6: calmer controls, readable panels, cleaner article modal. */
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.19), rgba(255,255,255,.105));
+      border:1px solid rgba(255,255,255,.22);
+      box-shadow:
+        0 18px 48px rgba(0,0,0,.12),
+        inset 0 1px 0 rgba(255,255,255,.34);
+      backdrop-filter:blur(28px);
+      -webkit-backdrop-filter:blur(28px);
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle{
+      background:rgba(226,212,196,.34) !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.28) !important;
+      color:rgba(48,40,34,.76) !important;
+    }
+
+    .btn:hover,
+    .ghost:hover,
+    .pf:hover,
+    .pf.active{
+      background:rgba(226,212,196,.34) !important;
+      color:rgba(48,40,34,.76) !important;
+    }
+
+    .preview-card{
+      background:rgba(226,211,194,.30) !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.11),
+        inset 0 1px 0 rgba(255,255,255,.30) !important;
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+
+    .preview-card .label{
+      background:rgba(226,211,194,.42) !important;
+      border-top:1px solid rgba(255,255,255,.13) !important;
+      color:rgba(42,34,28,.86) !important;
+    }
+
+    .note,
+    .about-text,
+    .contacts-text{
+      color:rgba(36,30,26,.76) !important;
+    }
+
+    td:first-child{
+      color:rgba(34,29,25,.88);
+      font-weight:600;
+    }
+
+    td:last-child{
+      font-family:var(--font-ui);
+      font-size:18px;
+      font-weight:700;
+      letter-spacing:.04em;
+      color:rgba(28,24,21,.92);
+    }
+
+    .price-table-wrap{
+      background:rgba(232,219,204,.28);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.16);
+    }
+
+    .article-modal-panel{
+      overflow:hidden !important;
+      background:rgba(243,238,232,.94) !important;
+      border:1px solid rgba(255,255,255,.50) !important;
+      box-shadow:0 30px 70px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.55) !important;
+    }
+
+    .article-scroll{
+      max-height:calc(88vh - 56px);
+      overflow:auto;
+      padding-right:12px;
+      scrollbar-width:thin;
+      scrollbar-color:rgba(80,70,62,.30) transparent;
+    }
+
+    .article-scroll::-webkit-scrollbar{width:8px;}
+    .article-scroll::-webkit-scrollbar-track{background:transparent;}
+    .article-scroll::-webkit-scrollbar-thumb{
+      background:rgba(80,70,62,.24);
+      border-radius:999px;
+      border:2px solid rgba(243,238,232,.94);
+    }
+
+    @media (max-width:980px){
+      .two-col{margin-top:22px !important;}
+
+      .mobile-bottom-cta{
+        background:rgba(226,212,196,.50) !important;
+        border:1px solid rgba(255,255,255,.30) !important;
+        box-shadow:
+          0 14px 34px rgba(0,0,0,.18),
+          inset 0 1px 0 rgba(255,255,255,.36) !important;
+        color:rgba(39,32,27,.88) !important;
+      }
+
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:rgba(226,212,196,.34) !important;
+        border:1px solid rgba(255,255,255,.24) !important;
+        color:rgba(48,40,34,.76) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.28) !important;
+      }
+
+      #portfolioGrid .preview-card .label,
+      .video-grid .preview-card .label,
+      #articles .preview-card .label{
+        background:rgba(226,211,194,.42) !important;
+        border-top:1px solid rgba(255,255,255,.13) !important;
+      }
+
+      #services .note,
+      #about .about-text,
+      #contacts .contacts-text{
+        color:rgba(35,29,25,.80) !important;
+      }
+
+      #services td{
+        padding:13px 10px !important;
+      }
+
+      #services td:first-child{
+        font-size:13px !important;
+        line-height:1.34 !important;
+        font-weight:600 !important;
+        color:rgba(34,29,25,.90) !important;
+      }
+
+      #services td:last-child{
+        font-family:var(--font-ui) !important;
+        font-size:16px !important;
+        line-height:1 !important;
+        font-weight:700 !important;
+        letter-spacing:.035em !important;
+        color:rgba(28,24,21,.94) !important;
+        padding-left:8px !important;
+      }
+
+      .article-modal-panel{
+        width:min(94vw, 760px) !important;
+        max-height:88vh !important;
+        padding:22px 16px 18px !important;
+        border-radius:24px !important;
+      }
+
+      .article-scroll{
+        max-height:calc(88vh - 42px) !important;
+        padding-right:8px !important;
+      }
+
+      .article-content h1{font-size:34px !important; line-height:1.02 !important;}
+      .article-content h2{font-size:20px !important; line-height:1.2 !important;}
+      .article-content{font-size:14px !important; line-height:1.72 !important;}
+    }
+
+  
+
+    /* Premium polish v7: unified warm controls, readable copy blocks, article as article. */
+    :root{
+      --warm-panel:rgba(204,185,166,.38);
+      --warm-panel-strong:rgba(213,196,177,.52);
+      --warm-line:rgba(255,255,255,.26);
+      --warm-text:rgba(38,32,28,.88);
+    }
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.155), rgba(255,255,255,.075)) !important;
+      border:1px solid rgba(255,255,255,.24) !important;
+      box-shadow:
+        0 18px 48px rgba(0,0,0,.13),
+        inset 0 1px 0 rgba(255,255,255,.30) !important;
+      backdrop-filter:blur(30px) saturate(1.04) !important;
+      -webkit-backdrop-filter:blur(30px) saturate(1.04) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    .mobile-bottom-cta{
+      background:var(--warm-panel-strong) !important;
+      border:1px solid var(--warm-line) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.26) !important;
+      color:rgba(45,38,32,.82) !important;
+      text-shadow:none !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    .mobile-bottom-cta:hover{
+      background:var(--warm-panel-strong) !important;
+      border-color:var(--warm-line) !important;
+      color:rgba(45,38,32,.82) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.26) !important;
+    }
+
+    .preview-card{
+      background:rgba(204,185,166,.30) !important;
+      border:1px solid rgba(255,255,255,.25) !important;
+      box-shadow:
+        0 12px 30px rgba(0,0,0,.11),
+        inset 0 1px 0 rgba(255,255,255,.26) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      background:var(--warm-panel-strong) !important;
+      border-top:1px solid rgba(255,255,255,.18) !important;
+      color:rgba(42,34,28,.88) !important;
+    }
+
+    .price-table-wrap,
+    .about-text,
+    .contacts-text{
+      background:rgba(218,202,184,.32) !important;
+      border:1px solid rgba(255,255,255,.16) !important;
+      border-radius:20px !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.18) !important;
+    }
+
+    .about-text,
+    .contacts-text{
+      padding:16px 18px !important;
+      color:rgba(31,27,24,.88) !important;
+      line-height:1.78 !important;
+    }
+
+    .contacts-text b,
+    .about-text b,
+    .about-text strong{
+      color:rgba(22,19,17,.92) !important;
+    }
+
+    .article-modal-panel{
+      width:min(980px, 92vw) !important;
+      max-height:88vh !important;
+      padding:0 !important;
+      overflow:hidden !important;
+      border-radius:30px !important;
+      background:rgba(240,235,228,.96) !important;
+      border:1px solid rgba(255,255,255,.52) !important;
+      box-shadow:
+        0 34px 80px rgba(0,0,0,.34),
+        inset 0 1px 0 rgba(255,255,255,.70) !important;
+      backdrop-filter:blur(22px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(22px) saturate(1.02) !important;
+    }
+
+    #articleModalClose{
+      position:absolute !important;
+      top:22px !important;
+      right:22px !important;
+      float:none !important;
+      width:44px !important;
+      height:44px !important;
+      background:rgba(255,255,255,.70) !important;
+      border:1px solid rgba(255,255,255,.55) !important;
+      box-shadow:0 10px 26px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.72) !important;
+      z-index:5 !important;
+    }
+
+    .article-scroll{
+      max-height:88vh !important;
+      overflow:auto !important;
+      padding:52px 72px 64px !important;
+      scrollbar-width:thin !important;
+      scrollbar-color:rgba(89,78,69,.32) transparent !important;
+    }
+
+    .article-scroll::-webkit-scrollbar{width:8px !important;}
+    .article-scroll::-webkit-scrollbar-track{background:transparent !important; margin:24px 0 !important;}
+    .article-scroll::-webkit-scrollbar-thumb{
+      background:rgba(89,78,69,.28) !important;
+      border-radius:999px !important;
+      border:2px solid rgba(240,235,228,.96) !important;
+    }
+
+    .article-content{
+      max-width:760px !important;
+      margin:0 auto !important;
+      font-family:var(--font-ui) !important;
+      font-size:16px !important;
+      line-height:1.82 !important;
+      color:rgba(32,28,25,.92) !important;
+    }
+
+    .article-content h1{
+      max-width:720px !important;
+      margin:0 0 22px !important;
+      font-family:var(--font-luxe) !important;
+      font-size:50px !important;
+      line-height:1.02 !important;
+      letter-spacing:.005em !important;
+      font-weight:600 !important;
+      color:rgba(23,20,18,.96) !important;
+    }
+
+    .article-content h2{
+      margin:0 0 34px !important;
+      padding:0 0 28px !important;
+      border-bottom:1px solid rgba(90,78,68,.15) !important;
+      font-family:var(--font-luxe) !important;
+      font-size:25px !important;
+      line-height:1.25 !important;
+      letter-spacing:.01em !important;
+      font-weight:500 !important;
+      color:rgba(55,47,40,.86) !important;
+    }
+
+    .article-content h3{
+      margin:36px 0 14px !important;
+      font-family:var(--font-ui) !important;
+      font-size:13px !important;
+      line-height:1.45 !important;
+      letter-spacing:.12em !important;
+      font-weight:800 !important;
+      text-transform:uppercase !important;
+      color:rgba(28,24,21,.92) !important;
+    }
+
+    .article-content p{
+      margin:0 0 18px !important;
+      color:rgba(38,33,29,.90) !important;
+    }
+
+    .article-content ul,
+    .article-content ol{
+      margin:2px 0 22px 22px !important;
+    }
+
+    .article-content li{
+      margin:0 0 9px !important;
+      color:rgba(38,33,29,.90) !important;
+    }
+
+    @media (max-width:980px){
+      .ghost,
+      .btn,
+      .pf,
+      .mobile-menu-toggle,
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:var(--warm-panel-strong) !important;
+        border:1px solid var(--warm-line) !important;
+        color:rgba(45,38,32,.82) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.26) !important;
+      }
+
+      .preview-card .label,
+      #portfolioGrid .preview-card .label,
+      .video-grid .preview-card .label,
+      #articles .preview-card .label{
+        background:var(--warm-panel-strong) !important;
+        border-top:1px solid rgba(255,255,255,.18) !important;
+      }
+
+      .mobile-bottom-cta{
+        background:var(--warm-panel-strong) !important;
+        border:1px solid var(--warm-line) !important;
+        box-shadow:
+          0 12px 28px rgba(0,0,0,.16),
+          inset 0 1px 0 rgba(255,255,255,.28) !important;
+      }
+
+      .about-text,
+      .contacts-text{
+        padding:14px 15px !important;
+        line-height:1.66 !important;
+        color:rgba(31,27,24,.90) !important;
+      }
+
+      .article-modal-panel{
+        width:min(94vw, 760px) !important;
+        max-height:88vh !important;
+        border-radius:24px !important;
+      }
+
+      #articleModalClose{
+        top:14px !important;
+        right:14px !important;
+        width:42px !important;
+        height:42px !important;
+      }
+
+      .article-scroll{
+        max-height:88vh !important;
+        padding:38px 24px 42px !important;
+      }
+
+      .article-content{
+        max-width:100% !important;
+        font-size:14px !important;
+        line-height:1.72 !important;
+      }
+
+      .article-content h1{
+        padding-right:34px !important;
+        margin-bottom:16px !important;
+        font-size:31px !important;
+        line-height:1.05 !important;
+      }
+
+      .article-content h2{
+        margin-bottom:26px !important;
+        padding-bottom:22px !important;
+        font-size:19px !important;
+        line-height:1.28 !important;
+      }
+
+      .article-content h3{
+        margin-top:30px !important;
+        font-size:12px !important;
+        letter-spacing:.10em !important;
+      }
+    }
+
+
+
+    /* =========================================================
+       FINAL PREMIUM SYSTEM PATCH
+       Цель: единая тёплая тёмная glass-система без белых плашек.
+       Этот блок намеренно стоит последним и переопределяет старые v4/v5/v6/v7.
+       ========================================================= */
+
+    :root{
+      --premium-glass:rgba(126,101,82,.30);
+      --premium-glass-top:rgba(188,164,140,.22);
+      --premium-glass-bottom:rgba(86,68,56,.20);
+      --premium-card:rgba(126,101,82,.34);
+      --premium-card-soft:rgba(151,126,102,.30);
+      --premium-card-strong:rgba(82,64,52,.34);
+      --premium-line:rgba(255,244,232,.23);
+      --premium-line-soft:rgba(255,244,232,.14);
+      --premium-text:rgba(34,28,24,.92);
+      --premium-text-soft:rgba(45,37,32,.78);
+      --premium-light-text:rgba(255,248,239,.92);
+      --premium-shadow:0 20px 52px rgba(32,22,16,.18), inset 0 1px 0 rgba(255,255,255,.22);
+    }
+
+    body:before{
+      background:
+        radial-gradient(1000px 640px at 50% 22%, rgba(255,245,230,.30), rgba(163,132,104,.13) 48%, rgba(42,31,26,.18) 100%),
+        linear-gradient(180deg, rgba(65,46,37,.06), rgba(35,25,20,.18));
+    }
+
+    .glass,
+    .topbar.glass,
+    #portfolio.glass,
+    #video.glass,
+    #services.glass,
+    #articles.glass,
+    #about.glass,
+    #contacts.glass,
+    .modal-card{
+      background:
+        linear-gradient(180deg, var(--premium-glass-top), var(--premium-glass-bottom)) !important;
+      border:1px solid var(--premium-line) !important;
+      box-shadow:var(--premium-shadow) !important;
+      backdrop-filter:blur(30px) saturate(1.06) !important;
+      -webkit-backdrop-filter:blur(30px) saturate(1.06) !important;
+    }
+
+    .section,
+    #portfolio,
+    #articles,
+    #about,
+    #contacts{
+      overflow:hidden;
+    }
+
+    .preview-card,
+    #articles .preview-card,
+    .video-grid .preview-card,
+    #portfolioGrid .preview-card{
+      background:linear-gradient(180deg, rgba(126,101,82,.32), rgba(78,61,51,.22)) !important;
+      border:1px solid var(--premium-line-soft) !important;
+      box-shadow:0 14px 34px rgba(34,24,18,.16), inset 0 1px 0 rgba(255,255,255,.18) !important;
+      backdrop-filter:blur(18px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(1.02) !important;
+    }
+
+    .preview-card .thumb{
+      background:rgba(60,44,36,.18) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      background:linear-gradient(180deg, rgba(154,129,105,.38), rgba(103,82,68,.34)) !important;
+      border-top:1px solid rgba(255,244,232,.13) !important;
+      color:rgba(35,28,24,.90) !important;
+      text-shadow:0 1px 0 rgba(255,255,255,.10) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    .mobile-bottom-cta{
+      background:linear-gradient(180deg, rgba(150,125,102,.38), rgba(96,76,62,.28)) !important;
+      border:1px solid rgba(255,244,232,.24) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.20), 0 8px 20px rgba(31,22,17,.08) !important;
+      color:rgba(39,32,28,.84) !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    .mobile-bottom-cta:hover{
+      background:linear-gradient(180deg, rgba(160,134,110,.44), rgba(104,82,67,.32)) !important;
+      border-color:rgba(255,244,232,.28) !important;
+      color:rgba(28,23,20,.92) !important;
+    }
+
+    .price-table-wrap,
+    .about-text,
+    .contacts-text,
+    .map-card,
+    .map-ph{
+      background:linear-gradient(180deg, rgba(72,54,45,.24), rgba(46,35,30,.18)) !important;
+      border:1px solid rgba(255,244,232,.16) !important;
+      border-radius:20px !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.12) !important;
+    }
+
+    .about-text,
+    .contacts-text,
+    .note{
+      color:rgba(35,29,25,.88) !important;
+    }
+
+    .about-text,
+    .contacts-text{
+      padding:16px 18px !important;
+      line-height:1.75 !important;
+    }
+
+    .contacts-text b,
+    .about-text b,
+    .about-text strong{
+      color:rgba(18,15,13,.95) !important;
+    }
+
+    .map-card{
+      padding:14px !important;
+      min-height:auto !important;
+    }
+
+    .map-ph{
+      min-height:120px !important;
+      background:linear-gradient(180deg, rgba(96,76,62,.22), rgba(55,42,35,.18)) !important;
+    }
+
+    td:first-child{
+      color:rgba(31,26,23,.92) !important;
+      font-weight:600 !important;
+    }
+
+    td:last-child{
+      font-family:var(--font-ui) !important;
+      font-size:18px !important;
+      font-weight:800 !important;
+      letter-spacing:.035em !important;
+      color:rgba(25,21,19,.94) !important;
+    }
+
+    th, td{
+      border-bottom:1px solid rgba(82,62,50,.12) !important;
+    }
+
+    .title,
+    .portfolio-head h3{
+      color:rgba(31,25,22,.94) !important;
+      text-shadow:0 1px 0 rgba(255,255,255,.12) !important;
+    }
+
+    /* Article modal: редакционный luxury, а не Word из бухгалтерии */
+    .article-modal-panel{
+      width:min(940px, 92vw) !important;
+      max-height:88vh !important;
+      padding:0 !important;
+      overflow:hidden !important;
+      border-radius:30px !important;
+      background:
+        linear-gradient(180deg, rgba(238,230,220,.97), rgba(222,211,199,.95)) !important;
+      border:1px solid rgba(255,255,255,.56) !important;
+      box-shadow:0 34px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.72) !important;
+      backdrop-filter:blur(24px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(24px) saturate(1.02) !important;
+    }
+
+    #articleModalClose{
+      position:absolute !important;
+      top:20px !important;
+      right:20px !important;
+      float:none !important;
+      width:42px !important;
+      height:42px !important;
+      border-radius:999px !important;
+      background:rgba(246,239,231,.78) !important;
+      border:1px solid rgba(255,255,255,.62) !important;
+      color:rgba(42,34,29,.88) !important;
+      box-shadow:0 10px 26px rgba(0,0,0,.11), inset 0 1px 0 rgba(255,255,255,.70) !important;
+      z-index:6 !important;
+    }
+
+    .article-scroll{
+      max-height:88vh !important;
+      overflow:auto !important;
+      padding:58px 72px 70px !important;
+      scrollbar-width:none !important;
+    }
+
+    .article-scroll::-webkit-scrollbar{
+      width:0 !important;
+      height:0 !important;
+    }
+
+    .article-content{
+      max-width:680px !important;
+      margin:0 auto !important;
+      font-family:var(--font-ui) !important;
+      font-size:16px !important;
+      line-height:1.86 !important;
+      color:rgba(35,30,27,.92) !important;
+    }
+
+    .article-content h1{
+      max-width:680px !important;
+      margin:0 0 18px !important;
+      font-family:var(--font-luxe) !important;
+      font-size:46px !important;
+      line-height:1.02 !important;
+      letter-spacing:.005em !important;
+      font-weight:600 !important;
+      color:rgba(23,19,17,.98) !important;
+    }
+
+    .article-content h2{
+      margin:0 0 38px !important;
+      padding:0 0 30px !important;
+      border-bottom:1px solid rgba(84,68,56,.16) !important;
+      font-family:var(--font-luxe) !important;
+      font-size:24px !important;
+      line-height:1.34 !important;
+      font-weight:500 !important;
+      color:rgba(62,52,44,.84) !important;
+    }
+
+    .article-content h3{
+      margin:42px 0 14px !important;
+      font-family:var(--font-ui) !important;
+      font-size:12px !important;
+      line-height:1.45 !important;
+      letter-spacing:.16em !important;
+      font-weight:800 !important;
+      text-transform:uppercase !important;
+      color:rgba(31,26,23,.92) !important;
+    }
+
+    .article-content p{
+      margin:0 0 20px !important;
+      color:rgba(38,33,29,.90) !important;
+    }
+
+    .article-content h2 + p::first-letter{
+      float:left;
+      font-family:var(--font-luxe);
+      font-size:58px;
+      line-height:.82;
+      padding:8px 10px 0 0;
+      color:rgba(48,38,31,.92);
+    }
+
+    .article-content ul,
+    .article-content ol{
+      margin:4px 0 24px 22px !important;
+      padding:0 !important;
+    }
+
+    .article-content li{
+      margin:0 0 10px !important;
+      color:rgba(38,33,29,.90) !important;
+    }
+
+    .viewer.open#articleModal{
+      background:rgba(18,13,10,.54) !important;
+      backdrop-filter:blur(8px) !important;
+      -webkit-backdrop-filter:blur(8px) !important;
+    }
+
+    @media (max-width:980px){
+      body{
+        background-attachment:scroll !important;
+      }
+
+      .topbar.glass{
+        background:linear-gradient(180deg, rgba(207,188,168,.38), rgba(118,94,76,.20)) !important;
+      }
+
+      .glass,
+      #portfolio.glass,
+      #video.glass,
+      #services.glass,
+      #articles.glass,
+      #about.glass,
+      #contacts.glass{
+        background:linear-gradient(180deg, rgba(177,151,126,.28), rgba(82,63,52,.24)) !important;
+      }
+
+      #portfolio,
+      #video,
+      #services,
+      #articles,
+      #about,
+      #contacts{
+        margin-left:0 !important;
+        margin-right:0 !important;
+      }
+
+      .preview-card,
+      #articles .preview-card,
+      .video-grid .preview-card,
+      #portfolioGrid .preview-card{
+        background:linear-gradient(180deg, rgba(126,101,82,.34), rgba(72,55,46,.24)) !important;
+      }
+
+      .preview-card .label,
+      #articles .preview-card .label,
+      #portfolioGrid .preview-card .label,
+      .video-grid .preview-card .label{
+        background:linear-gradient(180deg, rgba(150,125,102,.42), rgba(96,76,62,.36)) !important;
+      }
+
+      .price-table-wrap,
+      .about-text,
+      .contacts-text,
+      .map-card,
+      .map-ph{
+        background:linear-gradient(180deg, rgba(69,52,43,.24), rgba(47,36,30,.18)) !important;
+      }
+
+      .contacts-grid{
+        gap:10px !important;
+      }
+
+      .map-card{
+        padding:10px !important;
+      }
+
+      .map-ph{
+        min-height:96px !important;
+      }
+
+      .article-modal-panel{
+        width:min(94vw, 760px) !important;
+        max-height:88vh !important;
+        border-radius:24px !important;
+      }
+
+      #articleModalClose{
+        top:12px !important;
+        right:12px !important;
+        width:40px !important;
+        height:40px !important;
+      }
+
+      .article-scroll{
+        max-height:88vh !important;
+        padding:38px 22px 44px !important;
+      }
+
+      .article-content{
+        max-width:100% !important;
+        font-size:14px !important;
+        line-height:1.76 !important;
+      }
+
+      .article-content h1{
+        padding-right:38px !important;
+        margin-bottom:16px !important;
+        font-size:30px !important;
+        line-height:1.08 !important;
+      }
+
+      .article-content h2{
+        margin-bottom:28px !important;
+        padding-bottom:22px !important;
+        font-size:19px !important;
+        line-height:1.32 !important;
+      }
+
+      .article-content h3{
+        margin-top:32px !important;
+        font-size:11px !important;
+        letter-spacing:.13em !important;
+      }
+
+      .article-content h2 + p::first-letter{
+        font-size:44px;
+        padding:7px 8px 0 0;
+      }
+    }
+
+    @media (max-width:560px){
+      .wrap{
+        padding-left:8px !important;
+        padding-right:8px !important;
+      }
+
+      #portfolio,
+      #video,
+      #services,
+      #articles,
+      #about,
+      #contacts{
+        border-radius:24px !important;
+      }
+
+      .article-content h1{
+        font-size:28px !important;
+      }
+    }
+
+
+
+    /* =========================================================
+       V9 READABLE LUXURY GLASS FIX
+       Правка после теста: v8 ушёл в подвал. Возвращаем свет,
+       но не белые плашки. Телефонные кнопки больше не сахарные.
+       ========================================================= */
+
+    :root{
+      --v9-panel-top:rgba(232,214,194,.34);
+      --v9-panel-bottom:rgba(176,147,120,.27);
+      --v9-panel-mobile-top:rgba(218,196,174,.36);
+      --v9-panel-mobile-bottom:rgba(162,133,108,.30);
+      --v9-card:rgba(202,174,148,.34);
+      --v9-card-light:rgba(226,207,187,.42);
+      --v9-control:rgba(176,148,122,.42);
+      --v9-control-mobile:rgba(160,132,107,.52);
+      --v9-line:rgba(255,246,236,.34);
+      --v9-line-soft:rgba(255,246,236,.22);
+      --v9-ink:rgba(33,27,23,.94);
+      --v9-ink-soft:rgba(47,39,33,.82);
+      --v9-shadow:0 18px 46px rgba(48,34,25,.14), inset 0 1px 0 rgba(255,255,255,.34);
+    }
+
+    body:before{
+      background:
+        radial-gradient(1050px 660px at 50% 20%, rgba(255,248,238,.36), rgba(214,184,154,.14) 48%, rgba(55,40,32,.08) 100%),
+        linear-gradient(180deg, rgba(255,246,236,.04), rgba(72,51,39,.08)) !important;
+    }
+
+    .glass,
+    .topbar.glass,
+    #portfolio.glass,
+    #video.glass,
+    #services.glass,
+    #articles.glass,
+    #about.glass,
+    #contacts.glass,
+    .modal-card{
+      background:linear-gradient(180deg, var(--v9-panel-top), var(--v9-panel-bottom)) !important;
+      border:1px solid var(--v9-line) !important;
+      box-shadow:var(--v9-shadow) !important;
+      backdrop-filter:blur(28px) saturate(1.04) !important;
+      -webkit-backdrop-filter:blur(28px) saturate(1.04) !important;
+    }
+
+    .preview-card,
+    #articles .preview-card,
+    .video-grid .preview-card,
+    #portfolioGrid .preview-card{
+      background:linear-gradient(180deg, rgba(220,198,176,.38), rgba(168,138,112,.30)) !important;
+      border:1px solid var(--v9-line-soft) !important;
+      box-shadow:0 12px 30px rgba(43,30,22,.12), inset 0 1px 0 rgba(255,255,255,.26) !important;
+      backdrop-filter:blur(18px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(1.02) !important;
+    }
+
+    .preview-card .thumb{
+      background:rgba(225,205,185,.22) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      background:linear-gradient(180deg, rgba(204,178,151,.48), rgba(154,126,102,.38)) !important;
+      border-top:1px solid rgba(255,246,236,.20) !important;
+      color:var(--v9-ink) !important;
+      text-shadow:0 1px 0 rgba(255,255,255,.12) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    .mobile-bottom-cta{
+      background:linear-gradient(180deg, rgba(202,176,151,.48), rgba(151,123,100,.38)) !important;
+      border:1px solid rgba(255,246,236,.34) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.30), 0 8px 18px rgba(43,30,22,.08) !important;
+      color:rgba(39,32,27,.88) !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    .mobile-bottom-cta:hover{
+      background:linear-gradient(180deg, rgba(212,188,163,.54), rgba(161,133,109,.42)) !important;
+      border-color:rgba(255,246,236,.40) !important;
+      color:rgba(27,22,19,.96) !important;
+    }
+
+    .price-table-wrap,
+    .about-text,
+    .contacts-text,
+    .map-card,
+    .map-ph{
+      background:linear-gradient(180deg, rgba(236,219,201,.32), rgba(183,154,128,.24)) !important;
+      border:1px solid rgba(255,246,236,.25) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.28) !important;
+    }
+
+    .about-text,
+    .contacts-text,
+    .note,
+    td:first-child,
+    .map-ph-sub{
+      color:var(--v9-ink-soft) !important;
+    }
+
+    .about-text,
+    .contacts-text{
+      color:rgba(39,32,27,.86) !important;
+      font-weight:500 !important;
+    }
+
+    .contacts-text b,
+    .about-text b,
+    .about-text strong,
+    .map-ph-title{
+      color:rgba(24,20,17,.94) !important;
+    }
+
+    td:first-child{
+      color:rgba(34,28,24,.90) !important;
+      font-weight:600 !important;
+    }
+
+    td:last-child{
+      color:rgba(27,23,20,.96) !important;
+    }
+
+    th, td{
+      border-bottom:1px solid rgba(92,72,58,.13) !important;
+    }
+
+    .title,
+    .portfolio-head h3,
+    .name{
+      color:rgba(29,24,21,.96) !important;
+      text-shadow:0 1px 0 rgba(255,255,255,.16) !important;
+    }
+
+    header nav a{
+      color:rgba(43,35,30,.82) !important;
+    }
+
+    @media (max-width:980px){
+      .topbar.glass{
+        background:linear-gradient(180deg, rgba(226,207,187,.46), rgba(176,147,120,.34)) !important;
+      }
+
+      .glass,
+      #portfolio.glass,
+      #video.glass,
+      #services.glass,
+      #articles.glass,
+      #about.glass,
+      #contacts.glass{
+        background:linear-gradient(180deg, var(--v9-panel-mobile-top), var(--v9-panel-mobile-bottom)) !important;
+      }
+
+      .preview-card,
+      #articles .preview-card,
+      .video-grid .preview-card,
+      #portfolioGrid .preview-card{
+        background:linear-gradient(180deg, rgba(214,190,166,.40), rgba(159,130,105,.32)) !important;
+      }
+
+      .preview-card .label,
+      #articles .preview-card .label,
+      #portfolioGrid .preview-card .label,
+      .video-grid .preview-card .label{
+        background:linear-gradient(180deg, rgba(190,160,132,.52), rgba(140,113,91,.44)) !important;
+        color:rgba(31,25,22,.92) !important;
+      }
+
+      .ghost,
+      .btn,
+      .pf,
+      .mobile-menu-toggle,
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover,
+      .mobile-bottom-cta{
+        background:linear-gradient(180deg, rgba(174,145,118,.56), rgba(133,106,86,.48)) !important;
+        border:1px solid rgba(255,246,236,.34) !important;
+        color:rgba(35,29,25,.90) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.24), 0 7px 16px rgba(38,27,20,.08) !important;
+      }
+
+      .pf.active,
+      #portfolioFilters .pf.active{
+        background:linear-gradient(180deg, rgba(190,160,132,.60), rgba(145,116,94,.52)) !important;
+        color:rgba(24,20,17,.96) !important;
+      }
+
+      .price-table-wrap,
+      .about-text,
+      .contacts-text,
+      .map-card,
+      .map-ph{
+        background:linear-gradient(180deg, rgba(226,207,188,.34), rgba(169,139,114,.27)) !important;
+      }
+
+      .about-text,
+      .contacts-text,
+      .note,
+      td:first-child{
+        color:rgba(37,31,27,.88) !important;
+      }
+    }
+
+
+
+
+    /* Premium v10: clean luxury glass, no cheap white button outlines, fixed mobile background. */
+    :root{
+      --lux-panel: rgba(204,184,162,.34);
+      --lux-panel-soft: rgba(214,195,174,.24);
+      --lux-panel-strong: rgba(188,163,139,.42);
+      --lux-line: rgba(78,58,43,.18);
+      --lux-line-soft: rgba(78,58,43,.11);
+      --lux-highlight: rgba(255,248,238,.12);
+      --lux-ink: rgba(36,30,26,.88);
+    }
+
+    html{
+      min-height:100%;
+      background:#d9d7d4;
+    }
+
+    body{
+      background-color:#d9d7d4 !important;
+      background-image:none !important;
+      background-attachment:scroll !important;
+      position:relative;
+      overflow-x:hidden;
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      inset:0;
+      z-index:-2;
+      pointer-events:none;
+      background-image:url('assets/bg-main.jpg');
+      background-size:cover;
+      background-position:center center;
+      background-repeat:no-repeat;
+      transform:translateZ(0);
+      will-change:transform;
+    }
+
+    body::before{
+      z-index:-1 !important;
+      background:
+        radial-gradient(1000px 620px at 50% 18%, rgba(255,248,236,.34), rgba(255,255,255,.08) 54%, rgba(30,20,14,.12) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.08), rgba(45,32,24,.16)) !important;
+    }
+
+    .glass{
+      background:linear-gradient(180deg, rgba(223,204,181,.34), rgba(169,140,116,.24)) !important;
+      border:1px solid var(--lux-line-soft) !important;
+      box-shadow:
+        0 18px 48px rgba(33,22,15,.14),
+        inset 0 1px 0 var(--lux-highlight) !important;
+      backdrop-filter:blur(28px) saturate(1.04) !important;
+      -webkit-backdrop-filter:blur(28px) saturate(1.04) !important;
+    }
+
+    .topbar.glass{
+      background:linear-gradient(180deg, rgba(232,214,193,.44), rgba(183,157,134,.30)) !important;
+      border-color:rgba(78,58,43,.14) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    .mobile-bottom-cta{
+      background:linear-gradient(180deg, rgba(207,184,161,.34), rgba(160,132,110,.22)) !important;
+      border:1px solid var(--lux-line) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,248,238,.10),
+        0 5px 14px rgba(35,24,17,.055) !important;
+      color:rgba(42,34,29,.80) !important;
+      text-shadow:none !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    .mobile-bottom-cta:hover{
+      background:linear-gradient(180deg, rgba(214,193,171,.42), rgba(166,138,114,.28)) !important;
+      border-color:rgba(78,58,43,.22) !important;
+      color:rgba(32,27,23,.92) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,248,238,.12),
+        0 6px 16px rgba(35,24,17,.07) !important;
+    }
+
+    #portfolioFilters .pf{
+      border-color:rgba(68,49,36,.16) !important;
+      background:rgba(128,101,79,.16) !important;
+      box-shadow:none !important;
+    }
+
+    #portfolioFilters .pf.active,
+    #portfolioFilters .pf:hover{
+      background:rgba(128,101,79,.22) !important;
+      border-color:rgba(68,49,36,.22) !important;
+      box-shadow:none !important;
+    }
+
+    .portfolio-filters-text .sep{
+      color:rgba(61,47,37,.28) !important;
+      opacity:1 !important;
+    }
+
+    .preview-card{
+      background:rgba(184,156,132,.26) !important;
+      border:1px solid rgba(82,61,45,.13) !important;
+      box-shadow:
+        0 12px 30px rgba(33,22,15,.11),
+        inset 0 1px 0 rgba(255,248,238,.10) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      background:linear-gradient(180deg, rgba(198,175,153,.42), rgba(150,123,101,.30)) !important;
+      border-top:1px solid rgba(70,52,39,.10) !important;
+      color:rgba(39,32,27,.88) !important;
+    }
+
+    .price-table-wrap,
+    .about-text,
+    .contacts-text{
+      background:linear-gradient(180deg, rgba(223,205,185,.34), rgba(175,148,125,.24)) !important;
+      border:1px solid rgba(75,55,40,.14) !important;
+      box-shadow:inset 0 1px 0 rgba(255,248,238,.10) !important;
+    }
+
+    .about-text,
+    .contacts-text,
+    .note{
+      color:rgba(34,29,25,.82) !important;
+    }
+
+    .about-text p,
+    .about-text li,
+    .contacts-text div{
+      color:rgba(34,29,25,.84) !important;
+    }
+
+    td:first-child{color:rgba(34,29,25,.86) !important;}
+    td:last-child{color:rgba(28,24,21,.90) !important;}
+    th,td{border-bottom-color:rgba(76,56,42,.10) !important;}
+
+    .map-card.glass{
+      background:linear-gradient(180deg, rgba(223,205,185,.26), rgba(175,148,125,.18)) !important;
+      border-color:rgba(75,55,40,.13) !important;
+    }
+
+    .map-ph{
+      background:rgba(126,101,82,.10) !important;
+      border-color:rgba(75,55,40,.12) !important;
+    }
+
+    @media (max-width:980px){
+      body::after{
+        background-position:center top;
+      }
+
+      header nav a{
+        border-color:rgba(75,55,40,.14) !important;
+        background:rgba(154,126,104,.18) !important;
+        box-shadow:none !important;
+      }
+
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:rgba(146,116,92,.22) !important;
+        border:1px solid rgba(72,52,38,.18) !important;
+        box-shadow:none !important;
+        color:rgba(43,35,29,.82) !important;
+      }
+
+      .mobile-menu-toggle{
+        background:rgba(172,143,119,.26) !important;
+        border-color:rgba(72,52,38,.18) !important;
+        box-shadow:none !important;
+      }
+
+      .mobile-bottom-cta{
+        background:linear-gradient(180deg, rgba(210,190,169,.56), rgba(168,139,115,.44)) !important;
+        border-color:rgba(72,52,38,.18) !important;
+        box-shadow:
+          0 12px 28px rgba(33,22,15,.14),
+          inset 0 1px 0 rgba(255,248,238,.10) !important;
+      }
+
+      .topbar.glass{
+        background:linear-gradient(180deg, rgba(230,211,190,.42), rgba(184,156,132,.28)) !important;
+      }
+    }
+
+
+    /* Premium v11: restore original fixed background. v10 moved the image behind body background, да, CSS again ate the furniture. */
+    html{
+      background:#d9d7d4 !important;
+      min-height:100% !important;
+    }
+
+    body{
+      background-color:#d9d7d4 !important;
+      background-image:url('assets/bg-main.jpg') !important;
+      background-size:cover !important;
+      background-position:center center !important;
+      background-repeat:no-repeat !important;
+      background-attachment:fixed !important;
+      overflow-x:hidden !important;
+    }
+
+    body::after{
+      display:none !important;
+      content:none !important;
+    }
+
+    body::before{
+      content:"" !important;
+      position:fixed !important;
+      inset:0 !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+      background:
+        radial-gradient(1100px 680px at 50% 22%, rgba(255,248,236,.30), rgba(255,255,255,.06) 56%, rgba(30,20,14,.10) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(45,32,24,.12)) !important;
+    }
+
+    .wrap,
+    .mobile-bottom-cta{
+      position:relative !important;
+      z-index:1 !important;
+    }
+
+    .modal,
+    .viewer{
+      z-index:80 !important;
+    }
+
+    .viewer{z-index:90 !important;}
+
+    @media (max-width:980px){
+      body{
+        background-attachment:fixed !important;
+        background-position:center top !important;
+      }
+    }
+
+
+    /* Premium v12: real fixed bg-main everywhere, no grey fallback bands, softer label-like controls. */
+    html{
+      background:transparent !important;
+      min-height:100% !important;
+    }
+
+    body{
+      background:transparent !important;
+      background-image:none !important;
+      background-color:transparent !important;
+      min-height:100% !important;
+      overflow-x:hidden !important;
+    }
+
+    body::before,
+    body::after{
+      display:none !important;
+      content:none !important;
+    }
+
+    .bg{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+      background-image:url('assets/bg-main.jpg') !important;
+      background-size:cover !important;
+      background-position:center center !important;
+      background-repeat:no-repeat !important;
+      transform:translateZ(0) !important;
+      will-change:transform !important;
+    }
+
+    .veil{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+      background:
+        radial-gradient(1100px 680px at 50% 22%, rgba(255,248,236,.24), rgba(255,255,255,.04) 56%, rgba(30,20,14,.08) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.03), rgba(45,32,24,.10)) !important;
+    }
+
+    .wrap,
+    header,
+    .mobile-bottom-cta,
+    .modal,
+    .viewer{
+      position:relative !important;
+    }
+
+    .wrap,
+    header,
+    .mobile-bottom-cta{
+      z-index:1 !important;
+    }
+
+    .modal{z-index:80 !important;}
+    .viewer{z-index:90 !important;}
+
+    /* Controls should feel like engraved champagne labels, not dirty pills from a CRM dashboard. */
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    header nav a,
+    .mobile-bottom-cta{
+      background:linear-gradient(180deg, rgba(218,199,178,.62), rgba(176,150,126,.48)) !important;
+      border:1px solid rgba(92,70,52,.16) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,248,238,.22),
+        0 4px 10px rgba(38,25,17,.045) !important;
+      color:rgba(43,35,29,.80) !important;
+      text-shadow:none !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    header nav a:hover,
+    .mobile-bottom-cta:hover{
+      background:linear-gradient(180deg, rgba(228,210,190,.68), rgba(185,159,134,.54)) !important;
+      border-color:rgba(92,70,52,.20) !important;
+      color:rgba(35,29,24,.92) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,248,238,.26),
+        0 5px 12px rgba(38,25,17,.055) !important;
+    }
+
+    #portfolioFilters .pf,
+    #portfolioFilters .pf.active,
+    #portfolioFilters .pf:hover{
+      background:linear-gradient(180deg, rgba(218,199,178,.62), rgba(176,150,126,.48)) !important;
+      border:1px solid rgba(92,70,52,.15) !important;
+      box-shadow:inset 0 1px 0 rgba(255,248,238,.22) !important;
+      color:rgba(43,35,29,.80) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      background:linear-gradient(180deg, rgba(220,201,181,.62), rgba(176,150,126,.48)) !important;
+      border-top:1px solid rgba(92,70,52,.10) !important;
+      color:rgba(44,36,30,.86) !important;
+    }
+
+    .portfolio-filters-text .sep{
+      color:rgba(70,52,39,.20) !important;
+      opacity:1 !important;
+    }
+
+    @media (max-width:980px){
+      .bg{
+        background-position:center top !important;
+      }
+
+      .ghost,
+      .btn,
+      .pf,
+      .mobile-menu-toggle,
+      header nav a,
+      .mobile-bottom-cta,
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:linear-gradient(180deg, rgba(218,199,178,.64), rgba(176,150,126,.50)) !important;
+        border:1px solid rgba(92,70,52,.16) !important;
+        box-shadow:inset 0 1px 0 rgba(255,248,238,.22) !important;
+      }
+    }
+
+
+    /* Premium v13: monochrome frosted glass. Color belongs to bg-main, not to UI blobs. */
+    html,
+    body{
+      min-height:100% !important;
+      background-color:#d9d7d4 !important;
+      background-image:url('assets/bg-main.jpg') !important;
+      background-size:cover !important;
+      background-position:center center !important;
+      background-repeat:no-repeat !important;
+      background-attachment:fixed !important;
+      overflow-x:hidden !important;
+    }
+
+    body::before,
+    body::after{
+      display:none !important;
+      content:none !important;
+    }
+
+    .bg{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+      background-image:url('assets/bg-main.jpg') !important;
+      background-size:cover !important;
+      background-position:center center !important;
+      background-repeat:no-repeat !important;
+      transform:none !important;
+      will-change:auto !important;
+    }
+
+    .veil{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:0 !important;
+      pointer-events:none !important;
+      background:
+        radial-gradient(1000px 620px at 50% 20%, rgba(255,255,255,.18), rgba(255,255,255,.025) 58%, rgba(0,0,0,.055) 100%),
+        linear-gradient(180deg, rgba(255,255,255,.025), rgba(0,0,0,.045)) !important;
+    }
+
+    .wrap,
+    header,
+    .mobile-bottom-cta,
+    .modal,
+    .viewer{
+      position:relative !important;
+    }
+
+    .wrap,
+    header,
+    .mobile-bottom-cta{
+      z-index:1 !important;
+    }
+
+    .glass{
+      background:linear-gradient(180deg, rgba(255,255,255,.215), rgba(255,255,255,.095)) !important;
+      border:1px solid rgba(255,255,255,.26) !important;
+      box-shadow:
+        0 18px 48px rgba(0,0,0,.13),
+        inset 0 1px 0 rgba(255,255,255,.32) !important;
+      backdrop-filter:blur(36px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(36px) saturate(1.02) !important;
+    }
+
+    .preview-card,
+    .price-table-wrap,
+    .about-text,
+    .contacts-text,
+    .map-ph{
+      background:linear-gradient(180deg, rgba(255,255,255,.155), rgba(255,255,255,.075)) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      box-shadow:
+        0 10px 26px rgba(0,0,0,.095),
+        inset 0 1px 0 rgba(255,255,255,.20) !important;
+      backdrop-filter:blur(24px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(24px) saturate(1.02) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    header nav a,
+    .mobile-bottom-cta{
+      background:linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.105)) !important;
+      border:1px solid rgba(255,255,255,.18) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.26),
+        0 5px 12px rgba(0,0,0,.045) !important;
+      color:rgba(36,33,31,.78) !important;
+      text-shadow:none !important;
+      backdrop-filter:blur(18px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(1.02) !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    header nav a:hover,
+    .mobile-bottom-cta:hover{
+      background:linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,.14)) !important;
+      border-color:rgba(255,255,255,.22) !important;
+      color:rgba(24,22,20,.90) !important;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.32),
+        0 5px 12px rgba(0,0,0,.05) !important;
+    }
+
+    #portfolioFilters .pf,
+    #portfolioFilters .pf.active,
+    #portfolioFilters .pf:hover{
+      background:linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,.095)) !important;
+      border:1px solid rgba(255,255,255,.16) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.22) !important;
+      color:rgba(36,33,31,.78) !important;
+    }
+
+    .portfolio-filters-text .sep{
+      color:rgba(255,255,255,.22) !important;
+      opacity:1 !important;
+    }
+
+    .preview-card .thumb{
+      margin-bottom:0 !important;
+      background:transparent !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      margin-top:-1px !important;
+      background:linear-gradient(180deg, rgba(255,255,255,.19), rgba(255,255,255,.105)) !important;
+      border-top:0 !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.10) !important;
+      color:rgba(34,30,27,.82) !important;
+      backdrop-filter:blur(18px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(1.02) !important;
+    }
+
+    #articles .preview-card:nth-last-child(1) .label{
+      border-top:0 !important;
+      box-shadow:none !important;
+    }
+
+    td:first-child,
+    .note,
+    .about-text,
+    .contacts-text{
+      color:rgba(32,29,27,.82) !important;
+    }
+
+    @media (max-width:980px){
+      html,
+      body{
+        background-image:url('assets/bg-main.jpg') !important;
+        background-size:cover !important;
+        background-position:center top !important;
+        background-repeat:no-repeat !important;
+        background-attachment:fixed !important;
+      }
+
+      .bg{
+        background-position:center top !important;
+        background-attachment:scroll !important;
+      }
+
+      .glass{
+        background:linear-gradient(180deg, rgba(255,255,255,.205), rgba(255,255,255,.09)) !important;
+        backdrop-filter:blur(34px) saturate(1.02) !important;
+        -webkit-backdrop-filter:blur(34px) saturate(1.02) !important;
+      }
+
+      .ghost,
+      .btn,
+      .pf,
+      .mobile-menu-toggle,
+      header nav a,
+      .mobile-bottom-cta,
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.105)) !important;
+        border:1px solid rgba(255,255,255,.16) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.22) !important;
+      }
+    }
+
+
+
+    /* =========================================================
+       V14 FINAL MONOCHROME GLASS FIX
+       Только нейтральное матовое стекло. Цвет живёт в bg-main.jpg.
+       Старые тёплые v4-v13 оставлены ниже по течению истории, как музей CSS-грехов,
+       но этот блок стоит последним и переопределяет их.
+       ========================================================= */
+
+    :root{
+      --mono-glass-1:rgba(255,255,255,.060);
+      --mono-glass-2:rgba(255,255,255,.035);
+      --mono-glass-3:rgba(255,255,255,.085);
+      --mono-line:rgba(255,255,255,.135);
+      --mono-line-strong:rgba(255,255,255,.20);
+      --mono-shadow:0 18px 46px rgba(0,0,0,.115), inset 0 1px 0 rgba(255,255,255,.16);
+      --mono-shadow-soft:0 10px 26px rgba(0,0,0,.085), inset 0 1px 0 rgba(255,255,255,.12);
+      --mono-ink:rgba(28,27,26,.92);
+      --mono-ink-soft:rgba(36,34,32,.78);
+    }
+
+    html,
+    body{
+      min-height:100% !important;
+      background-color:transparent !important;
+      background-image:url('assets/bg-main.jpg') !important;
+      background-size:cover !important;
+      background-position:center center !important;
+      background-repeat:no-repeat !important;
+      background-attachment:fixed !important;
+      overflow-x:hidden !important;
+    }
+
+    body::before,
+    body::after,
+    .veil{
+      display:none !important;
+      content:none !important;
+      background:none !important;
+    }
+
+    .bg{
+      display:none !important;
+    }
+
+    .glass,
+    .topbar.glass,
+    #portfolio.glass,
+    #video.glass,
+    #services.glass,
+    #articles.glass,
+    #about.glass,
+    #contacts.glass,
+    .modal-card{
+      background:linear-gradient(180deg, var(--mono-glass-3), var(--mono-glass-1)) !important;
+      border:1px solid var(--mono-line) !important;
+      box-shadow:var(--mono-shadow) !important;
+      backdrop-filter:blur(38px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(38px) saturate(1.02) !important;
+    }
+
+    .preview-card,
+    #articles .preview-card,
+    .video-grid .preview-card,
+    #portfolioGrid .preview-card,
+    .price-table-wrap,
+    .about-text,
+    .contacts-text,
+    .map-card.glass,
+    .map-ph{
+      background:linear-gradient(180deg, rgba(255,255,255,.070), rgba(255,255,255,.035)) !important;
+      border:1px solid rgba(255,255,255,.125) !important;
+      box-shadow:var(--mono-shadow-soft) !important;
+      backdrop-filter:blur(26px) saturate(1.015) !important;
+      -webkit-backdrop-filter:blur(26px) saturate(1.015) !important;
+    }
+
+    .ghost,
+    .btn,
+    .pf,
+    .mobile-menu-toggle,
+    header nav a,
+    .mobile-bottom-cta,
+    #portfolioFilters .pf,
+    #portfolioFilters .pf.active,
+    #portfolioFilters .pf:hover{
+      background:linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.040)) !important;
+      border:1px solid rgba(255,255,255,.145) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.16), 0 5px 12px rgba(0,0,0,.04) !important;
+      color:rgba(30,29,28,.80) !important;
+      text-shadow:none !important;
+      backdrop-filter:blur(20px) saturate(1.015) !important;
+      -webkit-backdrop-filter:blur(20px) saturate(1.015) !important;
+    }
+
+    .ghost:hover,
+    .btn:hover,
+    .pf:hover,
+    .pf.active,
+    header nav a:hover,
+    .mobile-bottom-cta:hover,
+    #portfolioFilters .pf.active,
+    #portfolioFilters .pf:hover{
+      background:linear-gradient(180deg, rgba(255,255,255,.125), rgba(255,255,255,.060)) !important;
+      border-color:rgba(255,255,255,.205) !important;
+      color:rgba(20,19,18,.92) !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 6px 14px rgba(0,0,0,.045) !important;
+    }
+
+    .preview-card .thumb,
+    #articles .preview-card .thumb,
+    .video-grid .preview-card .thumb,
+    #portfolioGrid .preview-card .thumb{
+      display:block !important;
+      line-height:0 !important;
+      margin:0 !important;
+      padding:0 !important;
+      border:0 !important;
+      background:transparent !important;
+      overflow:hidden !important;
+    }
+
+    .preview-card img,
+    #articles .preview-card img,
+    .video-grid .preview-card img,
+    #portfolioGrid .preview-card img{
+      display:block !important;
+      width:100% !important;
+      height:100% !important;
+      margin:0 !important;
+      padding:0 !important;
+      border:0 !important;
+      vertical-align:top !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      margin-top:-1px !important;
+      padding-top:calc(var(--label-pad-top, 14px) + 1px);
+      background:linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.040)) !important;
+      border-top:0 !important;
+      box-shadow:none !important;
+      color:rgba(30,28,26,.84) !important;
+      backdrop-filter:blur(20px) saturate(1.015) !important;
+      -webkit-backdrop-filter:blur(20px) saturate(1.015) !important;
+    }
+
+    #articles .preview-card{
+      gap:0 !important;
+      overflow:hidden !important;
+    }
+
+    #articles .preview-card .thumb{
+      aspect-ratio:16/9 !important;
+      flex:0 0 auto !important;
+    }
+
+    #articles .preview-card .label{
+      --label-pad-top:16px;
+      position:relative !important;
+      z-index:1 !important;
+      line-height:1.04 !important;
+      white-space:normal !important;
+    }
+
+    #articles .preview-card .label::before,
+    .preview-card .label::before{
+      background:transparent !important;
+      border:0 !important;
+      box-shadow:none !important;
+    }
+
+    .portfolio-filters-text .sep{
+      color:rgba(255,255,255,.24) !important;
+      opacity:1 !important;
+    }
+
+    .price-table-wrap,
+    .about-text,
+    .contacts-text{
+      color:var(--mono-ink-soft) !important;
+    }
+
+    .about-text p,
+    .about-text li,
+    .contacts-text div,
+    .note,
+    td:first-child{
+      color:var(--mono-ink-soft) !important;
+    }
+
+    .contacts-text b,
+    .about-text b,
+    .about-text strong,
+    .map-ph-title,
+    .title,
+    .portfolio-head h3,
+    .name{
+      color:var(--mono-ink) !important;
+      text-shadow:0 1px 0 rgba(255,255,255,.08) !important;
+    }
+
+    th,
+    td{
+      border-bottom:1px solid rgba(255,255,255,.105) !important;
+    }
+
+    td:last-child{
+      color:rgba(24,23,22,.88) !important;
+    }
+
+    .article-modal-panel{
+      background:linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.70)) !important;
+      border:1px solid rgba(255,255,255,.34) !important;
+      box-shadow:0 34px 80px rgba(0,0,0,.30), inset 0 1px 0 rgba(255,255,255,.42) !important;
+      backdrop-filter:blur(28px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(28px) saturate(1.02) !important;
+    }
+
+    #articleModalClose{
+      background:rgba(255,255,255,.18) !important;
+      border:1px solid rgba(255,255,255,.28) !important;
+      color:rgba(28,26,24,.88) !important;
+      box-shadow:0 10px 24px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.24) !important;
+      backdrop-filter:blur(18px) !important;
+      -webkit-backdrop-filter:blur(18px) !important;
+    }
+
+    @media (max-width:980px){
+      html,
+      body{
+        background-image:url('assets/bg-main.jpg') !important;
+        background-size:cover !important;
+        background-position:center top !important;
+        background-repeat:no-repeat !important;
+        background-attachment:fixed !important;
+      }
+
+      .glass,
+      .topbar.glass,
+      #portfolio.glass,
+      #video.glass,
+      #services.glass,
+      #articles.glass,
+      #about.glass,
+      #contacts.glass{
+        background:linear-gradient(180deg, rgba(255,255,255,.090), rgba(255,255,255,.045)) !important;
+        border-color:rgba(255,255,255,.145) !important;
+        backdrop-filter:blur(36px) saturate(1.02) !important;
+        -webkit-backdrop-filter:blur(36px) saturate(1.02) !important;
+      }
+
+      .ghost,
+      .btn,
+      .pf,
+      .mobile-menu-toggle,
+      header nav a,
+      .mobile-bottom-cta,
+      #portfolioFilters .pf,
+      #portfolioFilters .pf.active,
+      #portfolioFilters .pf:hover{
+        background:linear-gradient(180deg, rgba(255,255,255,.095), rgba(255,255,255,.050)) !important;
+        border:1px solid rgba(255,255,255,.155) !important;
+        box-shadow:inset 0 1px 0 rgba(255,255,255,.16) !important;
+      }
+
+      #portfolioGrid .preview-card .label{
+        --label-pad-top:10px;
+      }
+
+      #articles .preview-card .label{
+        --label-pad-top:16px;
+      }
+    }
+
+
+
+    /* =========================================================
+       V15 STICKY HEADER FIX
+       Шапка должна ехать вместе с окном при скролле.
+       V14 случайно прибил header к position:relative, потому что CSS,
+       видимо, тоже решил стать дизайнером без образования.
+       ========================================================= */
+
+    header#top,
+    header.anchor#top{
+      position:sticky !important;
+      top:14px !important;
+      z-index:1000 !important;
+      width:100% !important;
+      pointer-events:auto !important;
+    }
+
+    .topbar.glass{
+      position:relative !important;
+      z-index:1001 !important;
+    }
+
+    .wrap{
+      overflow:visible !important;
+    }
+
+    @media (max-width:980px){
+      header#top,
+      header.anchor#top{
+        position:sticky !important;
+        top:8px !important;
+        left:auto !important;
+        right:auto !important;
+        z-index:1000 !important;
+        padding:10px 10px 4px !important;
+        pointer-events:auto !important;
+      }
+
+      .topbar.glass{
+        position:relative !important;
+        z-index:1001 !important;
+      }
+    }
+
+
+    /* =========================================================
+       V16 MODAL STACK + READABILITY FIX
+       Возвращаем попапы поверх сайта. V14/V15 случайно сделали .modal/.viewer relative,
+       из-за чего галереи открывались в подвале страницы. Великолепно, CSS победил здравый смысл.
+       ========================================================= */
+
+    .modal,
+    .viewer,
+    #portfolioModal,
+    #viewer,
+    #videoModal,
+    #articleModal{
+      position:fixed !important;
+      inset:0 !important;
+      z-index:10000 !important;
+      margin:0 !important;
+      width:100vw !important;
+      height:100vh !important;
+      max-width:none !important;
+      max-height:none !important;
+      transform:none !important;
+    }
+
+    .modal{
+      display:none !important;
+      align-items:center !important;
+      justify-content:center !important;
+      padding:18px !important;
+      background:rgba(0,0,0,.46) !important;
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+    }
+
+    .modal.open{
+      display:flex !important;
+    }
+
+    .viewer{
+      display:none !important;
+      align-items:center !important;
+      justify-content:center !important;
+      padding:24px !important;
+      background:rgba(0,0,0,.58) !important;
+      backdrop-filter:blur(10px) !important;
+      -webkit-backdrop-filter:blur(10px) !important;
+    }
+
+    .viewer.open{
+      display:flex !important;
+    }
+
+    .modal-card{
+      position:relative !important;
+      z-index:10001 !important;
+      width:min(1100px, 96vw) !important;
+      max-height:86vh !important;
+      overflow:hidden !important;
+    }
+
+    .viewer-stage,
+    .article-modal-panel{
+      position:relative !important;
+      z-index:10001 !important;
+    }
+
+    .viewer-close,
+    .navbtn,
+    #articleModalClose,
+    #portfolioModalClose{
+      z-index:10002 !important;
+    }
+
+    .article-modal-panel{
+      width:min(940px, 92vw) !important;
+      max-height:88vh !important;
+      background:linear-gradient(180deg, rgba(255,255,255,.90), rgba(255,255,255,.78)) !important;
+      border:1px solid rgba(255,255,255,.38) !important;
+      box-shadow:0 34px 80px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.45) !important;
+      backdrop-filter:blur(30px) saturate(1.02) !important;
+      -webkit-backdrop-filter:blur(30px) saturate(1.02) !important;
+    }
+
+    .article-content{
+      color:rgba(20,19,18,.94) !important;
+    }
+
+    .article-content p,
+    .article-content li{
+      color:rgba(24,23,22,.90) !important;
+    }
+
+    .article-content h1,
+    .article-content h2,
+    .article-content h3,
+    .article-content strong,
+    .article-content b{
+      color:rgba(14,13,12,.96) !important;
+    }
+
+    .about-text,
+    .contacts-text,
+    .price-table-wrap{
+      background:linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.10)) !important;
+      border:1px solid rgba(255,255,255,.20) !important;
+      box-shadow:0 10px 28px rgba(0,0,0,.10), inset 0 1px 0 rgba(255,255,255,.20) !important;
+      color:rgba(22,21,20,.92) !important;
+    }
+
+    .about-text p,
+    .about-text li,
+    .contacts-text div,
+    .note,
+    td:first-child{
+      color:rgba(22,21,20,.88) !important;
+    }
+
+    .about-text{
+      font-weight:560 !important;
+    }
+
+    .contacts-text b,
+    .about-text b,
+    .about-text strong,
+    .title{
+      color:rgba(14,13,12,.94) !important;
+    }
+
+    .preview-card .label,
+    #articles .preview-card .label,
+    #portfolioGrid .preview-card .label,
+    .video-grid .preview-card .label{
+      color:rgba(24,23,22,.88) !important;
+    }
+
+    @media (max-width:980px){
+      .modal,
+      .viewer,
+      #portfolioModal,
+      #viewer,
+      #videoModal,
+      #articleModal{
+        position:fixed !important;
+        inset:0 !important;
+        z-index:10000 !important;
+        width:100vw !important;
+        height:100vh !important;
+      }
+
+      .viewer{
+        padding:12px !important;
+      }
+
+      .article-modal-panel{
+        width:min(94vw, 760px) !important;
+        max-height:88vh !important;
+      }
+
+      .about-text,
+      .contacts-text,
+      .price-table-wrap{
+        background:linear-gradient(180deg, rgba(255,255,255,.20), rgba(255,255,255,.11)) !important;
+      }
+    }
+
+
+
+
+    /* =========================================================
+       V17 FLOATING CTA FIX
+       Кнопка «Записаться» должна быть fixed-плавающей, а не жить внизу контента.
+       ========================================================= */
+    .mobile-bottom-cta{
+      position:fixed !important;
+      left:14px !important;
+      right:14px !important;
+      bottom:14px !important;
+      z-index:2147483000 !important;
+      transform:none !important;
+      pointer-events:auto !important;
+      isolation:isolate !important;
+    }
+
+    @media (max-width:980px){
+      .mobile-bottom-cta{
+        position:fixed !important;
+        left:14px !important;
+        right:14px !important;
+        bottom:14px !important;
+        z-index:2147483000 !important;
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        min-height:52px !important;
+        transform:none !important;
+        pointer-events:auto !important;
+      }
+
+      body{
+        padding-bottom:84px !important;
+      }
+    }
+
+    @media (min-width:981px){
+      .mobile-bottom-cta{
+        display:none !important;
+      }
+    }
+
+
+    /* =========================================================
+       V18 ARTICLE CARD HEIGHT + MOBILE FILTER FIX
+       После V17 карточки статей снова начали притворяться небоскрёбами.
+       Причина: базовый .preview-card имеет aspect-ratio:1/1, а статьи должны быть auto.
+       Также длинные фильтры на мобиле должны переноситься, а не ломать сетку.
+       ========================================================= */
+
+    .two-col-bottom{
+      align-items:start !important;
+    }
+
+    #articles,
+    #about{
+      align-self:start !important;
+    }
+
+    .articles-grid{
+      align-items:start !important;
+      grid-auto-rows:auto !important;
+    }
+
+    #articles .preview-card{
+      aspect-ratio:auto !important;
+      height:auto !important;
+      min-height:0 !important;
+      display:flex !important;
+      flex-direction:column !important;
+      justify-content:flex-start !important;
+      align-self:start !important;
+    }
+
+    #articles .preview-card .thumb{
+      aspect-ratio:16/9 !important;
+      height:auto !important;
+      min-height:0 !important;
+      flex:0 0 auto !important;
+    }
+
+    #articles .preview-card .label{
+      flex:0 0 auto !important;
+      min-height:0 !important;
+      height:auto !important;
+      padding:16px 18px 18px !important;
+    }
+
+    #articles .preview-card::before,
+    #articles .preview-card::after,
+    #articles .preview-card .thumb::before,
+    #articles .preview-card .thumb::after,
+    #articles .preview-card .label::after{
+      display:none !important;
+      content:none !important;
+    }
+
+    #portfolioFilters{
+      align-items:stretch !important;
+    }
+
+    #portfolioFilters .pf{
+      min-width:0 !important;
+      max-width:100% !important;
+      white-space:normal !important;
+      overflow:hidden !important;
+      text-overflow:clip !important;
+      overflow-wrap:anywhere !important;
+      word-break:normal !important;
+      hyphens:auto !important;
+      line-height:1.08 !important;
+    }
+
+    @media (max-width:980px){
+      #portfolioFilters{
+        grid-template-columns:repeat(3, minmax(0, 1fr)) !important;
+      }
+
+      #portfolioFilters .pf{
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        width:100% !important;
+        min-width:0 !important;
+        min-height:38px !important;
+        padding:7px 5px !important;
+        font-size:8px !important;
+        letter-spacing:.025em !important;
+        line-height:1.05 !important;
+        text-align:center !important;
+      }
+
+      #portfolioFilters .pf[data-cat="tricho"]{
+        font-size:7.1px !important;
+        letter-spacing:0 !important;
+      }
+
+      #portfolioFilters .pf[data-cat="removal"]{
+        font-size:7.2px !important;
+        letter-spacing:0 !important;
+      }
+
+      #articles .preview-card{
+        aspect-ratio:auto !important;
+        height:auto !important;
+        min-height:0 !important;
+      }
+
+      #articles .preview-card .label{
+        padding:14px 14px 16px !important;
+      }
+    }
+
+    @media (max-width:560px){
+      #portfolioFilters .pf{
+        font-size:7.6px !important;
+        letter-spacing:.015em !important;
+      }
+
+      #portfolioFilters .pf[data-cat="tricho"]{
+        font-size:6.9px !important;
+      }
+
+      #portfolioFilters .pf[data-cat="removal"]{
+        font-size:7px !important;
+      }
+    }
+
+
+
+
+    /* =========================================================
+       V19 ARTICLE WINDOW + DESKTOP NAV FIX
+       Окно статей можно делать выше без растягивания самих карточек.
+       Верхнее меню на десктопе снова текстовое, без мелких CRM-ярлыков.
+       ========================================================= */
+
+    @media (min-width:981px){
+      header nav a,
+      .topbar nav a,
+      #topbar nav a{
+        background:transparent !important;
+        border:0 !important;
+        box-shadow:none !important;
+        backdrop-filter:none !important;
+        -webkit-backdrop-filter:none !important;
+        padding:0 !important;
+        min-height:0 !important;
+        border-radius:0 !important;
+        display:inline-flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+        color:rgba(30,28,26,.78) !important;
+        text-shadow:none !important;
+      }
+
+      header nav a:hover,
+      .topbar nav a:hover,
+      #topbar nav a:hover{
+        background:transparent !important;
+        border:0 !important;
+        box-shadow:none !important;
+        color:rgba(18,17,16,.94) !important;
+      }
+
+      #articles{
+        min-height:380px !important;
+        display:block !important;
+      }
+
+      #articles .articles-grid{
+        height:auto !important;
+        align-items:start !important;
+        align-content:start !important;
+      }
+
+      #articles .preview-card{
+        width:100% !important;
+        max-height:none !important;
+        align-self:start !important;
+      }
+    }
+
+    @media (min-width:1200px){
+      #articles{
+        min-height:420px !important;
+      }
+    }
+
+    @media (max-width:980px){
+      #articles{
+        min-height:auto !important;
+      }
+
+      #portfolioFilters .pf[data-cat="tricho"]{
+        font-size:6.6px !important;
+        letter-spacing:-.01em !important;
+        padding-left:3px !important;
+        padding-right:3px !important;
+      }
+    }
+
+
+</style>
 </head>
 <body>
   <button class="mobile-fab" id="mobileFab" type="button" aria-label="Открыть меню">
@@ -793,11 +3661,22 @@
   <div class="wrap">
     <header class="anchor" id="top">
       <div class="topbar glass" id="topbar">
-        <div class="brand-mini">
-          <div class="logo-pill">
-            <img src="assets/logo-mark.png" alt="LP" />
+        <div class="mobile-brand-row">
+          <div class="brand-mini">
+            <div class="logo-pill">
+              <img src="assets/logo-mark.png" alt="LP" />
+            </div>
+            <div class="brand-text">
+              <div class="name fx">LIDIA MASORINA</div>
+              <div class="tagline fx">PERMANENT MAKE UP</div>
+            </div>
           </div>
-          <div class="name fx">LIDIA MASORINA</div>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Открыть меню">☰</button>
+        </div>
+
+        <div class="mobile-quick">
+          <a class="btn" href="#services">Услуги</a>
+          <a class="btn" href="https://t.me/Angi_steam?text=Здравствуйте%2C%20хочу%20записаться%20к%20вам%20на%20приём" target="_blank" rel="noreferrer">Записаться</a>
         </div>
 
         <nav aria-label="Навигация">
@@ -1074,6 +3953,9 @@
       </div>
     </section>
   </div>
+
+  <a class="mobile-bottom-cta" href="https://t.me/Angi_steam?text=Здравствуйте%2C%20хочу%20записаться%20к%20вам%20на%20приём" target="_blank" rel="noreferrer">Записаться</a>
+
 
   <div class="modal" id="portfolioModal" aria-hidden="true">
     <div class="modal-card" role="dialog" aria-modal="true" aria-label="Галерея">
@@ -1641,8 +4523,10 @@
             z-index:3;
           ">×</button>
 
-          <div class="article-content">
-            ${article.article}
+          <div class="article-scroll">
+            <div class="article-content">
+              ${article.article}
+            </div>
           </div>
         </div>
       `;
@@ -1676,22 +4560,20 @@
     });
 
     const mobileFab = document.getElementById("mobileFab");
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
     const pageHeader = document.getElementById("top");
 
     function syncMobileHeader(){
+      document.body.classList.remove("mobile-top-visible");
       if(window.innerWidth > 980){
-        document.body.classList.remove("mobile-top-visible");
         pageHeader?.classList.remove("menu-open");
-        return;
-      }
-
-      if(window.scrollY <= 40){
-        document.body.classList.add("mobile-top-visible");
-        pageHeader?.classList.remove("menu-open");
-      } else {
-        document.body.classList.remove("mobile-top-visible");
       }
     }
+
+    mobileMenuToggle?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      pageHeader?.classList.toggle("menu-open");
+    });
 
     mobileFab?.addEventListener("click", (e) => {
       e.stopPropagation();
